@@ -1,0 +1,56 @@
+<body>
+    <div class="dropdownContainer">
+        <h3>Choose a Season: </h3>
+        <select [(ngModel)]="selectedSeason" (change)="setSeason()">
+            <option value="" disabled selected>Choose Season</option>
+            <option *ngFor="let season of seasons" [ngValue]="season">
+                <p>{{season.startYear}}/{{season.startYear + 1}}</p>
+            </option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="container center">
+                <div class="card">
+                    <h2>Top Scorers</h2>
+                    <hr>
+                    <ul *ngFor="let player of topScorers">
+                        <li>
+                            <p>{{player.name}} ({{player.club.name}}): {{player.seasonGoals}} goals</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="container center">
+                <div class="card">
+                    <h2>Top Assisters</h2>
+                    <hr>
+                    <ul *ngFor="let player of topAssists">
+                        <li>
+                            <p>{{player.name}} ({{player.club.name}}): {{player.seasonAssists}} assists</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="container center">
+                <div class="card">
+                    <h2>Winner</h2>
+                    <hr>
+                    <p *ngIf="winner">{{winner.name}}</p>
+                    <h2>Relegated</h2>
+                    <hr>
+                    <ul *ngFor="let team of relegated">
+                        <li>
+                            <p>{{team.name}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

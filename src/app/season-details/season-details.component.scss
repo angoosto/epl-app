@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+$black: #282828;
+$point: #00ff85;
+$point-light:darken($point,10%);
+$prem-purple: #38003c;
+$prem-red: #e90052;
+
+$ratio:1;
+$card_width: 300px;
+$card_height: $card_width * $ratio;
+$card_padding: 20px;
+$card_bgcolor: white;
+$card_margin: 5px;
+$card_round: 10px;
+$card_shadow: -20px -20px 0px 0px $point-light;
+
+$card-padding-basis: 15px;
+$card_head_padding: 0px 0px $card-padding-basis 0px;
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: $point;
+}
+
+.dropdownContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    h3 p {
+        font-family: "Nunito", sans-serif;
+        color: $prem-purple;
+    }
+}
+
+.container {
+    // width: 80%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    -webkit-box-align: left;
+    -ms-flex-align: left;
+    align-items: left;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+}
+
+.center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.right {
+    -webkit-box-align: right;
+    -ms-flex-align: right;
+    align-items: right;
+    -webkit-box-pack: right;
+    -ms-flex-pack: right;
+    justify-content: right;
+}
+
+
+.card {
+    background-color: $card_bgcolor;
+    width: $card_width;
+    min-height: $card_height;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    padding: $card_padding;
+    margin: $card_margin;
+
+    -webkit-box-shadow: $card_shadow;
+    box-shadow: $card_shadow;
+    border-radius: $card_round;
+
+    -webkit-animation-name: shadow-show;
+    -webkit-animation-duration: 1.5s;
+    animation-name: shadow-show;
+    animation-duration: 1.5s;
+
+    -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+    -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+    transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+
+    h2 {
+        margin: 0px;
+        padding: $card_head_padding;
+        font-family: "Nunito", sans-serif;
+        font-size: 30px;
+        color: $prem-purple;
+        font-weight: bold;
+    }
+
+    hr {
+        display: block;
+        border: none;
+        height: 3px;
+        background: $prem-red;
+        margin: 0px;
+
+        -webkit-animation-name: line-show;
+        -webkit-animation-duration: 0.3s;
+        animation-name: line-show;
+        animation-duration: 0.3s;
+        -webkit-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+        -o-transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000);
+        transition-timing-function: cubic-bezier(0.795, 0.000, 0.165, 1.000); 
+    }
+
+    p {
+        margin: $card-padding-basis 0px 0px 0px;
+        font-family: "Nunito", sans-serif;
+        font-weight: 100;
+        letter-spacing: -0.25px;
+        line-height: 1.25;
+        font-size: 16px;
+        // word-break: break-all;
+        // word-wrap: pre-wrap;
+        color: $prem-purple;
+        text-align: left;
+
+        -webkit-animation-name: p-show;
+        -webkit-animation-duration: 1.5s;
+        animation-name: p-show;
+        animation-duration: 1.5s;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes line-show {
+    from {margin: 0px 100px;}
+    to {margin: 0px;}
+  }
+  
+  /* Standard syntax */
+  @keyframes line-show {
+    from {margin: 0px 100px;}
+    to {margin: 0px;}
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes p-show {
+    from {color: white;}
+    to {color: $black;}
+  }
+  
+  /* Standard syntax */
+  @keyframes p-show {
+    from {color: white;}
+    to {color: $black;}
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes shadow-show {
+    from {
+      -webkit-box-shadow: 0px 0px 0px 0px #e0e0e0;
+      box-shadow: 0px 0px 0px 0px #e0e0e0;
+    }
+    to {
+      -webkit-box-shadow: $card-shadow;
+      box-shadow: $card-shadow;
+    }
+  }
+  
+  /* Standard syntax */
+  @keyframes shadow-show {
+    from {-webkit-box-shadow: 0px 0px 0px 0px #e0e0e0;box-shadow: 0px 0px 0px 0px #e0e0e0;}
+    to {-webkit-box-shadow: $card-shadow;box-shadow: $card-shadow;}
+  }
